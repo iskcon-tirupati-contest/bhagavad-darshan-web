@@ -1,5 +1,5 @@
 {
-  "_comment": "Magazine archive. Add newest issues first. cover paths are relative to /assets/issues/. Only add issues whose cover scan you actually have — the archive page renders exactly what is listed here.",
+  "_comment": "Digital magazine archive. Add newest issues first. For full reading, add a pages array containing ordered page-image paths. Until page scans are added, the reader gracefully opens the cover as a one-page edition.",
   "issues": [
     {
       "volume": 22,
@@ -7,7 +7,10 @@
       "month": "July 2026",
       "title": "Jagannath Rathayatra Mahotsavam",
       "summary": "A festival edition on Lord Jagannath's grand chariot procession and the devotional mood surrounding it.",
-      "cover": "/assets/cover-700.webp"
+      "cover": "/assets/cover-700.webp",
+      "pages": [
+        "/assets/cover-700.webp"
+      ]
     }
   ]
 }
