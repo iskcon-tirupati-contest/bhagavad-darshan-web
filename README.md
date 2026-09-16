@@ -12,7 +12,8 @@ public/
   index.html                 homepage (bdtirupati.com)
   archive.html               past issues, rendered from issues.json
   issues.json                the archive data — edit this to add an issue
-  download/index.html        agent app download, WhatsApp OTP gated
+  download/index.html        public app download (the QR code target)
+  register-agent/index.html  agent registration, WhatsApp OTP gated
   legal/privacy.html         served at /privacy
   legal/delete-account.html  account deletion page required by Google Play
   404.html                   served by nginx for any unknown path
@@ -20,7 +21,26 @@ public/
 nginx/bdtirupati.conf        reference config for the domain
 nginx/bd-api.live.conf       snapshot of the deployed nginx site
 scripts/deploy.sh            rsync deploy to the Lightsail host
+qr/                          printable QR code for handing out (not deployed)
 ```
+
+## The two app pages
+
+| Page | Who it is for |
+| --- | --- |
+| `/download/` | Public. Downloads the APK straight away, no login. This is what the printed QR code points to. |
+| `/register-agent/` | Staff. WhatsApp OTP registration, then the agent APK, plus a complaint form. |
+
+`/download/` reads the current release from `GET /v1/app/version`, so publishing a new
+APK through the API updates the button without redeploying the site. The hardcoded
+`href` in the markup is only a fallback for when that request fails.
+
+## QR code
+
+`qr/bd-download-qr.svg` (vector, for print), `qr/bd-download-qr.png` and
+`qr/bd-download-poster.png` all encode `https://bdtirupati.com/download`.
+Regenerate with `segno` if the URL ever changes, and re-verify by decoding the image
+before printing.
 
 ## Adding a magazine issue
 

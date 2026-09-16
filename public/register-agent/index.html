@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Register as an agent — Bhagavad Darshan</title>
+<meta name="description" content="Register as a Bhagavad Darshan agent for ISKCON Tirupati and download the agent app." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="/assets/favicon.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<meta name="theme-color" content="#7A1F3D" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/site.css" />
+<style>
+  body {
+    display: grid;
+    place-items: start center;
+    min-height: 100vh;
+    padding: 34px 16px 56px;
+    background:
+      radial-gradient(ellipse at top, #FFF3DC 0%, transparent 58%),
+      linear-gradient(168deg, var(--cream-deep) 0%, var(--cream) 52%);
+  }
+  .card {
+    width: min(460px, 100%);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 34px 28px 30px;
+    text-align: center;
+  }
+  .logo {
+    width: 92px; height: 92px;
+    border-radius: 24px;
+    margin: 0 auto 16px;
+    box-shadow: var(--shadow-sm);
+  }
+  .card h1 { font-size: 30px; margin-bottom: 4px; }
+  .card .eyebrow { margin-bottom: 18px; }
+  .lead { color: var(--ink-soft); font-size: 16px; }
+
+  .wa-banner {
+    display: flex;
+    gap: 12px;
+    text-align: left;
+    background: #E7F5F0;
+    border: 1px solid #B8E0D2;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 14.5px;
+    color: #14594A;
+    margin-bottom: 20px;
+  }
+  .wa-banner strong { color: #0B4F3F; }
+
+  .field { text-align: left; margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 7px;
+  }
+  input, select, textarea {
+    width: 100%;
+    font-family: var(--body);
+    font-size: 16px;
+    color: var(--ink);
+    background: #fff;
+    border: 1.5px solid var(--line);
+    border-radius: 13px;
+    padding: 13px 15px;
+  }
+  textarea { min-height: 92px; resize: vertical; }
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--marigold);
+    box-shadow: 0 0 0 3px rgba(230, 81, 0, 0.14);
+  }
+  .row-otp { display: flex; gap: 10px; }
+  .row-otp input { flex: 1; }
+
+  .btn { width: 100%; margin-top: 4px; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--maroon);
+    border: 1.5px solid rgba(122, 31, 61, 0.35);
+    box-shadow: none;
+    margin-top: 10px;
+  }
+  .btn-secondary:hover { background: rgba(122, 31, 61, 0.06); box-shadow: none; }
+
+  .msg {
+    display: none;
+    text-align: left;
+    font-size: 14.5px;
+    border-radius: 13px;
+    padding: 12px 15px;
+    margin-bottom: 16px;
+  }
+  .msg.show { display: block; }
+  .msg.info { background: var(--gold-soft); color: #6B4A05; border: 1px solid #E8CE92; }
+  .msg.error { background: #FDECEA; color: #8C1D14; border: 1px solid #F3C0BB; }
+
+  .meta { font-size: 13.5px; color: var(--ink-soft); margin-top: 12px; letter-spacing: 0.04em; }
+  .note { font-size: 14px; color: var(--ink-soft); margin: 14px 0 0; }
+  .success-name { color: var(--marigold-deep); font-weight: 700; }
+  .hidden { display: none !important; }
+  .home-link { margin-top: 22px; font-size: 14.5px; }
+  .home-link a { color: var(--maroon); }
+</style>
+</head>
+<body>
+
+<main class="card">
+  <img class="logo" src="/assets/logo.webp" width="92" height="92" alt="Bhagavad Darshan" />
+  <p class="eyebrow">ISKCON Tirupati · Agents</p>
+  <h1>Register as an agent</h1>
+
+  <!-- REGISTER VIEW -->
+  <div id="registerView">
+    <p class="lead" id="leadText">
+      Register as an agent to download the Android app.
+    </p>
+    <div class="wa-banner">
+      <span aria-hidden="true">💬</span>
+      <div>
+        Use your <strong>WhatsApp mobile number</strong> only.
+        OTP is sent on WhatsApp — SMS numbers without WhatsApp will not work.
+      </div>
+    </div>
+
+    <div id="alert" class="msg" role="status"></div>
+
+    <form id="registerForm" autocomplete="on">
+      <div class="field" id="nameField">
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" maxlength="80" placeholder="Your name" required />
+      </div>
+      <div class="field">
+        <label for="phone">WhatsApp mobile number</label>
+        <input id="phone" name="phone" type="tel" inputmode="numeric" maxlength="10"
+               placeholder="10-digit WhatsApp number" required />
+      </div>
+
+      <div id="otpBlock" class="hidden">
+        <div class="field">
+          <label for="otp">WhatsApp OTP</label>
+          <div class="row-otp">
+            <input id="otp" name="otp" type="text" inputmode="numeric" maxlength="6"
+                   placeholder="6-digit OTP" />
+            <button type="button" class="btn btn-secondary" id="resendBtn"
+                    style="width:auto;padding:13px 18px;margin:0;">
+              Resend
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn" id="primaryBtn">Send WhatsApp OTP</button>
+    </form>
+
+    <div id="downloadBlock" class="hidden">
+      <p class="lead" style="margin-bottom:14px;" id="successText"></p>
+      <a class="btn" id="downloadBtn" href="#" download>Download App</a>
+      <div class="meta" id="versionMeta">Android</div>
+      <p class="note">
+        After download, open the file and tap Install.
+        If asked, allow installs from this browser.
+      </p>
+      <button type="button" class="btn btn-secondary" id="resetBtn">Register another number</button>
+    </div>
+
+    <button type="button" class="btn btn-secondary" id="openComplaintBtn">Register a complaint</button>
+  </div>
+
+  <!-- COMPLAINT VIEW -->
+  <div id="complaintView" class="hidden">
+    <p class="lead">Having trouble registering or installing? Tell us — we will help on WhatsApp.</p>
+    <div id="complaintAlert" class="msg" role="status"></div>
+    <form id="complaintForm">
+      <div class="field">
+        <label for="cName">Full name</label>
+        <input id="cName" type="text" maxlength="80" placeholder="Your name" required />
+      </div>
+      <div class="field">
+        <label for="cPhone">WhatsApp mobile number</label>
+        <input id="cPhone" type="tel" inputmode="numeric" maxlength="10"
+               placeholder="10-digit WhatsApp number" required />
+      </div>
+      <div class="field">
+        <label for="cModel">Mobile model</label>
+        <input id="cModel" type="text" maxlength="80" placeholder="e.g. Redmi Note 12 / Samsung A14" required />
+      </div>
+      <div class="field">
+        <label for="cIssue">Issue faced</label>
+        <select id="cIssue" required>
+          <option value="">Select an issue</option>
+          <option value="otp_whatsapp">OTP not received on WhatsApp</option>
+          <option value="cant_install">Cannot download or install the app</option>
+          <option value="app_crash">App crashes or will not open</option>
+          <option value="login_failed">Login / OTP verification failed</option>
+          <option value="update_issue">App update not showing</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="field hidden" id="cOtherField">
+        <label for="cOther">Describe the issue</label>
+        <textarea id="cOther" maxlength="500" placeholder="Please describe what went wrong"></textarea>
+      </div>
+      <button type="submit" class="btn" id="complaintSubmit">Submit complaint</button>
+      <button type="button" class="btn btn-secondary" id="backToRegisterBtn">Back to registration</button>
+    </form>
+  </div>
+
+  <p class="home-link">
+    Not an agent? <a href="/download/">Download the app here</a>
+  </p>
+</main>
+
+<script>
+  (function () {
+    const API = '/v1/auth/agent-download';
+    const SUPPORT = '/v1/support/agent-complaint';
+    const form = document.getElementById('registerForm');
+    const alertEl = document.getElementById('alert');
+    const nameInput = document.getElementById('name');
+    const phoneInput = document.getElementById('phone');
+    const otpInput = document.getElementById('otp');
+    const otpBlock = document.getElementById('otpBlock');
+    const primaryBtn = document.getElementById('primaryBtn');
+    const resendBtn = document.getElementById('resendBtn');
+    const downloadBlock = document.getElementById('downloadBlock');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const successText = document.getElementById('successText');
+    const versionMeta = document.getElementById('versionMeta');
+    const leadText = document.getElementById('leadText');
+    const resetBtn = document.getElementById('resetBtn');
+    const registerView = document.getElementById('registerView');
+    const complaintView = document.getElementById('complaintView');
+    const openComplaintBtn = document.getElementById('openComplaintBtn');
+    const backToRegisterBtn = document.getElementById('backToRegisterBtn');
+    const complaintForm = document.getElementById('complaintForm');
+    const complaintAlert = document.getElementById('complaintAlert');
+    const cIssue = document.getElementById('cIssue');
+    const cOtherField = document.getElementById('cOtherField');
+
+    let purpose = null;
+    let step = 'details';
+
+    function showAlert(el, kind, text) {
+      el.className = 'msg show ' + (kind === 'error' ? 'error' : 'info');
+      el.textContent = text;
+    }
+    function clearAlert(el) {
+      el.className = 'msg';
+      el.textContent = '';
+    }
+    function digits(v) { return String(v || '').replace(/\D/g, ''); }
+
+    phoneInput.addEventListener('input', function () {
+      phoneInput.value = digits(phoneInput.value).slice(0, 10);
+    });
+    document.getElementById('cPhone').addEventListener('input', function (e) {
+      e.target.value = digits(e.target.value).slice(0, 10);
+    });
+    otpInput.addEventListener('input', function () {
+      otpInput.value = digits(otpInput.value).slice(0, 6);
+    });
+    cIssue.addEventListener('change', function () {
+      if (cIssue.value === 'other') cOtherField.classList.remove('hidden');
+      else cOtherField.classList.add('hidden');
+    });
+
+    openComplaintBtn.addEventListener('click', function () {
+      registerView.classList.add('hidden');
+      complaintView.classList.remove('hidden');
+      clearAlert(complaintAlert);
+      document.getElementById('cName').value = nameInput.value.trim();
+      document.getElementById('cPhone').value = phoneInput.value.trim();
+    });
+    backToRegisterBtn.addEventListener('click', function () {
+      complaintView.classList.add('hidden');
+      registerView.classList.remove('hidden');
+    });
+
+    async function postJson(url, body) {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      const data = await res.json().catch(function () { return {}; });
+      if (!res.ok || data.ok === false) {
+        throw new Error(data.message || 'Request failed');
+      }
+      return data;
+    }
+
+    async function sendOtp() {
+      clearAlert(alertEl);
+      const phone = digits(phoneInput.value);
+      const name = nameInput.value.trim();
+      if (!/^[6-9]\d{9}$/.test(phone)) {
+        showAlert(alertEl, 'error', 'Enter a valid 10-digit WhatsApp mobile number.');
+        return;
+      }
+      primaryBtn.disabled = true;
+      resendBtn.disabled = true;
+      primaryBtn.textContent = 'Sending…';
+      try {
+        const data = await postJson(API + '/send', { phone: phone, name: name });
+        purpose = data.purpose;
+        step = 'otp';
+        otpBlock.classList.remove('hidden');
+        otpInput.value = '';
+        otpInput.focus();
+        primaryBtn.textContent = 'Verify & continue';
+        if (data.alreadyRegistered) {
+          leadText.textContent = 'You are already registered. Verify the WhatsApp OTP to unlock the download.';
+          showAlert(alertEl, 'info', data.message || 'Already registered. Enter WhatsApp OTP to download.');
+        } else {
+          leadText.textContent = 'Enter the OTP sent on WhatsApp to finish registration.';
+          showAlert(alertEl, 'info', data.message || 'OTP sent on WhatsApp.');
+        }
+        if (data.debugOtp) {
+          showAlert(alertEl, 'info', (data.message || 'OTP sent') + ' Debug OTP: ' + data.debugOtp);
+        }
+      } catch (err) {
+        showAlert(alertEl, 'error', err.message || 'Could not send OTP');
+        primaryBtn.textContent = step === 'otp' ? 'Verify & continue' : 'Send WhatsApp OTP';
+      } finally {
+        primaryBtn.disabled = false;
+        resendBtn.disabled = false;
+      }
+    }
+
+    async function verifyOtp() {
+      clearAlert(alertEl);
+      const phone = digits(phoneInput.value);
+      const name = nameInput.value.trim();
+      const otp = digits(otpInput.value);
+      if (!purpose) {
+        showAlert(alertEl, 'error', 'Please request an OTP first.');
+        return;
+      }
+      if (!/^\d{6}$/.test(otp)) {
+        showAlert(alertEl, 'error', 'Enter the 6-digit OTP from WhatsApp.');
+        return;
+      }
+      primaryBtn.disabled = true;
+      primaryBtn.textContent = 'Verifying…';
+      try {
+        const data = await postJson(API + '/verify', {
+          phone: phone, otp: otp, name: name, purpose: purpose
+        });
+        step = 'done';
+        form.classList.add('hidden');
+        leadText.classList.add('hidden');
+        downloadBlock.classList.remove('hidden');
+        openComplaintBtn.classList.add('hidden');
+        successText.innerHTML = data.alreadyRegistered
+          ? '<span class="success-name">' + escapeHtml(data.agent && data.agent.name || 'Agent') + '</span> — you are already registered. Download the app below.'
+          : 'Registration successful' + (data.agent && data.agent.name ? ', <span class="success-name">' + escapeHtml(data.agent.name) + '</span>' : '') + '. Download the agent app below.';
+        showAlert(alertEl, 'info', data.message || 'Verified.');
+        if (!data.apkUrl) {
+          showAlert(alertEl, 'error', 'App file is not available yet. Please register a complaint.');
+          downloadBtn.classList.add('hidden');
+        } else {
+          downloadBtn.href = data.apkUrl;
+          downloadBtn.classList.remove('hidden');
+        }
+        versionMeta.textContent = data.version
+          ? ('Version ' + data.version + ' · Android')
+          : 'Android';
+      } catch (err) {
+        showAlert(alertEl, 'error', err.message || 'Verification failed');
+        primaryBtn.textContent = 'Verify & continue';
+      } finally {
+        primaryBtn.disabled = false;
+      }
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (step === 'details') sendOtp();
+      else if (step === 'otp') verifyOtp();
+    });
+    resendBtn.addEventListener('click', function () { sendOtp(); });
+    resetBtn.addEventListener('click', function () {
+      step = 'details';
+      purpose = null;
+      form.classList.remove('hidden');
+      leadText.classList.remove('hidden');
+      downloadBlock.classList.add('hidden');
+      openComplaintBtn.classList.remove('hidden');
+      otpBlock.classList.add('hidden');
+      otpInput.value = '';
+      primaryBtn.textContent = 'Send WhatsApp OTP';
+      leadText.textContent = 'Register as an agent to download the Android app.';
+      clearAlert(alertEl);
+    });
+
+    complaintForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      clearAlert(complaintAlert);
+      const btn = document.getElementById('complaintSubmit');
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+      try {
+        const data = await postJson(SUPPORT, {
+          name: document.getElementById('cName').value.trim(),
+          phone: digits(document.getElementById('cPhone').value),
+          deviceModel: document.getElementById('cModel').value.trim(),
+          issue: cIssue.value,
+          otherDetails: document.getElementById('cOther').value.trim()
+        });
+        showAlert(complaintAlert, 'info', data.message || 'Complaint registered successfully.');
+        complaintForm.classList.add('hidden');
+        backToRegisterBtn.textContent = 'Back to registration';
+      } catch (err) {
+        showAlert(complaintAlert, 'error', err.message || 'Could not submit complaint');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Submit complaint';
+      }
+    });
+  })();
+</script>
+</body>
+</html>

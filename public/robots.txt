@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /v1/
+Disallow: /register-agent/
 
 Sitemap: https://bdtirupati.com/sitemap.xml
