@@ -1,0 +1,13 @@
+{
+  "_comment": "Magazine archive. Add newest issues first. cover paths are relative to /assets/issues/. Only add issues whose cover scan you actually have — the archive page renders exactly what is listed here.",
+  "issues": [
+    {
+      "volume": 22,
+      "issue": 7,
+      "month": "July 2026",
+      "title": "Jagannath Rathayatra Mahotsavam",
+      "summary": "A festival edition on Lord Jagannath's grand chariot procession and the devotional mood surrounding it.",
+      "cover": "/assets/cover-700.webp"
+    }
+  ]
+}

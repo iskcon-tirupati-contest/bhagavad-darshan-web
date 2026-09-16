@@ -10,11 +10,31 @@ and the few live pages were hand-edited directly on the server.
 ```
 public/
   index.html                 homepage (bdtirupati.com)
+  archive.html               past issues, rendered from issues.json
+  issues.json                the archive data — edit this to add an issue
+  download/index.html        agent app download, WhatsApp OTP gated
   legal/privacy.html         served at /privacy
   legal/delete-account.html  account deletion page required by Google Play
+  404.html                   served by nginx for any unknown path
+  robots.txt, sitemap.xml
 nginx/bdtirupati.conf        reference config for the domain
+nginx/bd-api.live.conf       snapshot of the deployed nginx site
 scripts/deploy.sh            rsync deploy to the Lightsail host
 ```
+
+## Adding a magazine issue
+
+1. Put the cover scan in `public/assets/issues/` (WebP, roughly 700px wide).
+2. Add an entry at the top of the `issues` array in `public/issues.json`.
+3. `./scripts/deploy.sh live`
+
+The archive renders exactly what `issues.json` lists, newest first, and shows year
+filter buttons once more than one year is present.
+
+## Pages that are not here
+
+`/media/` serves photos and released APKs straight from `/var/www/html/bd-media`
+on the host; those files are not in this repo.
 
 ## Photos
 

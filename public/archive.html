@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Magazine archive — Bhagavad Darshan</title>
+<meta name="description" content="Past issues of Bhagavad Darshan, the monthly spiritual magazine of ISKCON Tirupati." />
+<link rel="canonical" href="https://bdtirupati.com/archive.html" />
+<meta property="og:title" content="Magazine archive — Bhagavad Darshan" />
+<meta property="og:description" content="Past issues of Bhagavad Darshan, the monthly magazine of ISKCON Tirupati." />
+<meta property="og:image" content="https://bdtirupati.com/assets/cover-700.webp" />
+<meta name="theme-color" content="#7A1F3D" />
+<link rel="icon" href="/assets/favicon.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600;700&family=Noto+Serif+Telugu:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/site.css" />
+<style>
+  .archive-hero {
+    background: linear-gradient(160deg, var(--cream-deep) 0%, var(--cream) 60%);
+    border-bottom: 1px solid var(--line);
+    padding: 62px 0 54px;
+    text-align: center;
+  }
+  .archive-hero h1 { font-size: clamp(31px, 5vw, 46px); margin-bottom: 12px; }
+  .archive-hero p { color: var(--ink-soft); max-width: 34em; margin-inline: auto; }
+
+  .year-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 30px; }
+  .year-nav button {
+    font-family: var(--body);
+    font-size: 14.5px;
+    font-weight: 600;
+    padding: 9px 20px;
+    border-radius: 999px;
+    border: 1.5px solid var(--line);
+    background: var(--paper);
+    color: var(--ink-soft);
+    cursor: pointer;
+  }
+  .year-nav button[aria-pressed="true"] {
+    background: var(--maroon);
+    border-color: var(--maroon);
+    color: #fff;
+  }
+
+  .issue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 32px;
+  }
+  .issue {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .issue:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .issue-cover { background: var(--cream-deep); aspect-ratio: 3 / 4; }
+  .issue-cover img { width: 100%; height: 100%; object-fit: cover; }
+  .issue-body { padding: 20px 20px 22px; }
+  .issue-month {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--marigold-deep);
+  }
+  .issue-body h2 { font-size: 20px; margin: 8px 0 8px; }
+  .issue-body p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 12px; }
+  .issue-vol { font-size: 13px; color: var(--ink-soft); border-top: 1px dashed var(--line); padding-top: 11px; }
+
+  .empty, .loading {
+    text-align: center;
+    color: var(--ink-soft);
+    padding: 40px 0;
+  }
+  .postal-note {
+    margin-top: 54px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 24px 26px;
+    color: var(--ink-soft);
+  }
+  .postal-note strong { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <img src="/assets/logo.webp" width="46" height="46" alt="" />
+      <span>
+        <span class="brand-name">Bhagavad Darshan</span>
+        <span class="brand-sub">ISKCON Tirupati</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
+      <span class="sr-only">Menu</span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
+      </svg>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="/#magazine">The magazine</a>
+      <a href="/archive.html">Archive</a>
+      <a href="/#plans">Plans</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-sm" href="/#plans">Subscribe</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="archive-hero">
+    <div class="wrap">
+      <span class="eyebrow">Archive</span>
+      <h1>Past issues</h1>
+      <p>
+        Every month brings a new issue of Bhagavad Darshan. Covers are added here as
+        they are scanned from the temple's collection.
+      </p>
+      <div class="year-nav" id="yearNav" role="group" aria-label="Filter issues by year"></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <p class="loading" id="loading">Loading issues…</p>
+      <div class="issue-grid" id="issueGrid"></div>
+      <p class="empty hidden" id="empty">No issues listed for this year yet.</p>
+
+      <div class="postal-note">
+        <p style="margin:0 0 10px;">
+          <strong>Reading past issues.</strong> Bhagavad Darshan is a printed magazine
+          posted to subscribers. Back issues are not available to read online — this
+          page is a record of what has been published.
+        </p>
+        <p style="margin:0;">
+          To ask about a specific back issue, or to start a subscription so you never
+          miss one, <a href="/#contact">contact the book department</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="copy" style="margin-top:0;border-top:0;">
+      <span>© <span id="yr">2026</span> ISKCON Tirupati. All rights reserved.</span>
+      <span><a href="/">bdtirupati.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  var grid = document.getElementById('issueGrid');
+  var yearNav = document.getElementById('yearNav');
+  var loading = document.getElementById('loading');
+  var empty = document.getElementById('empty');
+  var allIssues = [];
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function yearOf(issue) {
+    var m = String(issue.month || '').match(/\d{4}/);
+    return m ? m[0] : 'Undated';
+  }
+
+  function render(year) {
+    var list = year === 'all' ? allIssues : allIssues.filter(function (i) { return yearOf(i) === year; });
+    grid.innerHTML = list.map(function (i) {
+      var vol = [];
+      if (i.volume) vol.push('Volume ' + esc(i.volume));
+      if (i.issue) vol.push('Issue ' + esc(i.issue));
+      return '<article class="issue">' +
+        '<div class="issue-cover">' +
+          (i.cover ? '<img src="' + esc(i.cover) + '" alt="Cover of Bhagavad Darshan, ' + esc(i.month) + '" loading="lazy" />' : '') +
+        '</div>' +
+        '<div class="issue-body">' +
+          '<p class="issue-month">' + esc(i.month) + '</p>' +
+          '<h2>' + esc(i.title) + '</h2>' +
+          (i.summary ? '<p>' + esc(i.summary) + '</p>' : '') +
+          (vol.length ? '<p class="issue-vol">' + vol.join(' · ') + '</p>' : '') +
+        '</div>' +
+      '</article>';
+    }).join('');
+    empty.classList.toggle('hidden', list.length > 0);
+  }
+
+  function buildYearNav(years) {
+    var buttons = ['all'].concat(years);
+    yearNav.innerHTML = buttons.map(function (y) {
+      return '<button type="button" data-year="' + y + '" aria-pressed="' + (y === 'all') + '">' +
+        (y === 'all' ? 'All issues' : y) + '</button>';
+    }).join('');
+    yearNav.addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (!btn) return;
+      yearNav.querySelectorAll('button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+      render(btn.dataset.year);
+    });
+  }
+
+  fetch('/issues.json', { cache: 'no-cache' })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      allIssues = (data.issues || []);
+      loading.classList.add('hidden');
+      var years = allIssues.map(yearOf).filter(function (y, i, a) { return a.indexOf(y) === i; });
+      years.sort(function (a, b) { return b.localeCompare(a); });
+      if (years.length > 1) buildYearNav(years);
+      render('all');
+    })
+    .catch(function () {
+      loading.textContent = 'Could not load the issue list. Please try again later.';
+    });
+</script>
+</body>
+</html>
