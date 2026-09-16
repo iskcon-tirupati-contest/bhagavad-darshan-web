@@ -19,5 +19,12 @@ esac
 ssh -i "$KEY" -o StrictHostKeyChecking=no "$HOST" "sudo mkdir -p $DEST && sudo chown -R ubuntu:ubuntu $DEST"
 rsync -az --delete -e "ssh -i $KEY -o StrictHostKeyChecking=no" "$SRC" "$HOST:$DEST/"
 
+# Google Play stores the deletion URL as /media/legal/delete-account.html, so that
+# copy must stay in sync with this repo.
+if [ "$TARGET" = live ]; then
+  ssh -i "$KEY" -o StrictHostKeyChecking=no "$HOST" \
+    "sudo install -D -m 664 $DEST/legal/delete-account.html /var/www/html/bd-media/legal/delete-account.html"
+fi
+
 echo "Deployed to $DEST"
 [ "$TARGET" = preview ] && echo "https://bdtirupati.com/preview/" || echo "https://bdtirupati.com/"
