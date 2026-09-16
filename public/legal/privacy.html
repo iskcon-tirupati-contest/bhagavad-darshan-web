@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy — Bhagavad Darshan</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.55; color: #3E2723; }
-    h1, h2 { color: #7A1F3D; }
-    a { color: #E65100; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy — Bhagavad Darshan</title>
+<meta name="description" content="How the Bhagavad Darshan app and ISKCON Tirupati handle your personal data." />
+<link rel="canonical" href="https://bdtirupati.com/privacy" />
+<link rel="icon" href="/assets/favicon.png" sizes="32x32" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/site.css" />
+<style>
+  .doc { max-width: 44em; margin-inline: auto; padding: 56px 0 72px; }
+  .doc h1 { font-size: clamp(30px, 5vw, 42px); margin-bottom: 6px; }
+  .doc .updated { color: var(--ink-soft); font-size: 15px; margin-bottom: 34px; }
+  .doc h2 { font-size: 23px; margin-top: 38px; }
+  .doc ul { padding-left: 22px; }
+  .doc li { padding: 4px 0; color: var(--ink-soft); }
+</style>
 </head>
 <body>
-  <h1>Privacy Policy — Bhagavad Darshan</h1>
-  <p>Last updated: 11 September 2026</p>
-  <p>Bhagavad Darshan (ISKCON Tirupati) provides magazine subscription services through our Android app.</p>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <img src="/assets/logo.webp" width="46" height="46" alt="" />
+      <span>
+        <span class="brand-name">Bhagavad Darshan</span>
+        <span class="brand-sub">ISKCON Tirupati</span>
+      </span>
+    </a>
+    <nav class="nav-links" style="display:flex;">
+      <a class="btn btn-sm btn-outline" href="/">Back to site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap doc">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: 16 September 2026</p>
+
+  <p>
+    Bhagavad Darshan (ISKCON Tirupati) provides magazine subscription services through
+    our Android app and this website.
+  </p>
 
   <h2>Data we collect</h2>
   <ul>
-    <li>Name, phone number, and delivery address</li>
+    <li>Name, phone number and delivery address</li>
     <li>Subscription and payment references (via Razorpay / UPI)</li>
     <li>App login via phone number and WhatsApp OTP</li>
-    <li>Optional payment-proof photos when a payment needs verification</li>
+    <li>Optional payment-proof photos, when a payment needs verification</li>
   </ul>
 
   <h2>How we use data</h2>
@@ -32,17 +63,37 @@
   </ul>
 
   <h2>Sharing</h2>
-  <p>We may share necessary data with payment processors (for example Razorpay) and delivery partners. We do not sell personal data.</p>
+  <p>
+    We may share only what is necessary with payment processors (for example Razorpay)
+    and delivery partners. We do not sell personal data.
+  </p>
 
   <h2>Security</h2>
-  <p>Data is transmitted over HTTPS where available. Access is limited to authorised temple staff.</p>
+  <p>
+    Data is transmitted over HTTPS. Access is limited to authorised temple staff.
+  </p>
 
   <h2>Your rights</h2>
-  <p>You may request account or data deletion here:
-    <a href="https://bdtirupati.com/media/legal/delete-account.html">Delete account</a>
+  <p>
+    You may request deletion of your account and associated data at any time:
+    <a href="/legal/delete-account.html">Delete account</a>.
   </p>
 
   <h2>Contact</h2>
-  <p>ISKCON Tirupati — Bhagavad Darshan support</p>
+  <p>
+    ISKCON Tirupati — Bhagavad Darshan book department<br />
+    <a href="mailto:iskcon.tirupati.books@gmail.com">iskcon.tirupati.books@gmail.com</a>
+  </p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="copy" style="margin-top:0;border-top:0;">
+      <span>© <span id="yr">2026</span> ISKCON Tirupati. All rights reserved.</span>
+      <span><a href="/">bdtirupati.com</a></span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>

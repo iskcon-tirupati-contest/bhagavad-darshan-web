@@ -1,30 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Delete account — Bhagavad Darshan</title>
-  <style>
-    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.5; color: #3E2723; }
-    h1 { color: #7A1F3D; }
-    a { color: #E65100; }
-    .box { background: #FFF8F0; border: 1px solid #E8DCC8; border-radius: 12px; padding: 16px; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Delete account — Bhagavad Darshan</title>
+<meta name="description" content="Request deletion of your Bhagavad Darshan account and associated personal data." />
+<link rel="icon" href="/assets/favicon.png" sizes="32x32" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/site.css" />
+<style>
+  .doc { max-width: 44em; margin-inline: auto; padding: 56px 0 72px; }
+  .doc h1 { font-size: clamp(30px, 5vw, 42px); margin-bottom: 18px; }
+  .doc h2 { font-size: 23px; margin-top: 38px; }
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 0 0 26px; }
+  .steps li {
+    position: relative;
+    padding: 10px 0 10px 46px;
+    color: var(--ink-soft);
+    border-bottom: 1px dashed var(--line);
+  }
+  .steps li:last-child { border-bottom: 0; }
+  .steps li::before {
+    counter-increment: s;
+    content: counter(s);
+    position: absolute; left: 0; top: 12px;
+    width: 28px; height: 28px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--gold-soft);
+    color: var(--maroon-deep);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 26px;
+    box-shadow: var(--shadow-sm);
+  }
+  .contact-line { font-size: 18px; font-weight: 600; }
+</style>
 </head>
 <body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <img src="/assets/logo.webp" width="46" height="46" alt="" />
+      <span>
+        <span class="brand-name">Bhagavad Darshan</span>
+        <span class="brand-sub">ISKCON Tirupati</span>
+      </span>
+    </a>
+    <nav class="nav-links" style="display:flex;">
+      <a class="btn btn-sm btn-outline" href="/">Back to site</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap doc">
   <h1>Delete your Bhagavad Darshan account</h1>
-  <p>You can request deletion of your Bhagavad Darshan app account and associated personal data.</p>
-  <div class="box">
-    <p><strong>How to request deletion</strong></p>
-    <ol>
-      <li>Send an email or WhatsApp message from the same phone number registered in the app.</li>
+  <p>
+    You can request deletion of your Bhagavad Darshan app account and the personal data
+    associated with it.
+  </p>
+
+  <div class="panel">
+    <h2 style="margin-top:0;">How to request deletion</h2>
+    <ol class="steps">
+      <li>Send an email or WhatsApp message from the phone number registered in the app.</li>
       <li>Write: <em>Please delete my Bhagavad Darshan account</em>.</li>
       <li>Include your full name and 10-digit mobile number.</li>
     </ol>
-    <p><strong>Email:</strong> <a href="mailto:iskcon.tirupati.books@gmail.com">iskcon.tirupati.books@gmail.com</a></p>
-    <p>We will verify ownership and delete your account data within <strong>30 days</strong>.</p>
-    <p>Subscription / payment records required by law may be retained only as long as legally necessary, then removed or anonymised.</p>
+    <p class="contact-line">
+      <a href="mailto:iskcon.tirupati.books@gmail.com?subject=Please%20delete%20my%20Bhagavad%20Darshan%20account">iskcon.tirupati.books@gmail.com</a>
+    </p>
+    <p class="contact-line" style="margin-bottom:0;">
+      <a href="https://wa.me/919550948778?text=Please%20delete%20my%20Bhagavad%20Darshan%20account">WhatsApp +91 95509 48778</a>
+    </p>
   </div>
-  <p><a href="/bd-media/legal/privacy.html">Privacy policy</a></p>
+
+  <h2>What happens next</h2>
+  <p>
+    We verify that the request comes from the account owner and delete your account data
+    within <strong>30 days</strong>.
+  </p>
+  <p>
+    Data deleted includes your name, phone number, delivery address and app login. Where
+    subscription or payment records must be kept to meet legal and accounting
+    requirements, they are retained only as long as the law requires, and are then
+    removed or anonymised.
+  </p>
+
+  <h2>Related</h2>
+  <p><a href="/privacy">Privacy policy</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="copy" style="margin-top:0;border-top:0;">
+      <span>© <span id="yr">2026</span> ISKCON Tirupati. All rights reserved.</span>
+      <span><a href="/">bdtirupati.com</a></span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>

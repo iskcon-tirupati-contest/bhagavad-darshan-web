@@ -3,244 +3,74 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bhagavad Darshan — ISKCON Tirupati Magazine</title>
-<meta name="description" content="Subscribe to Bhagavad Darshan, the Telugu and English magazine of ISKCON Tirupati. Renew, pay and manage your subscription online." />
-<meta property="og:title" content="Bhagavad Darshan — ISKCON Tirupati Magazine" />
-<meta property="og:description" content="Subscribe to Bhagavad Darshan magazine from ISKCON Tirupati. Plans from ₹299." />
-<meta property="og:image" content="https://bdtirupati.com/media/magazine_august_2026.png" />
+<title>Bhagavad Darshan — Monthly Spiritual Magazine | ISKCON Tirupati</title>
+<meta name="description" content="Subscribe to Bhagavad Darshan, the Telugu monthly spiritual magazine of ISKCON Tirupati. Home delivery across India, postage included. Plans from ₹299." />
+<link rel="canonical" href="https://bdtirupati.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Bhagavad Darshan" />
+<meta property="og:title" content="Bhagavad Darshan — Monthly Spiritual Magazine | ISKCON Tirupati" />
+<meta property="og:description" content="The Telugu monthly magazine of ISKCON Tirupati, delivered to your home. Subscription plans from ₹299, postage included." />
+<meta property="og:image" content="https://bdtirupati.com/assets/cover-700.webp" />
 <meta property="og:url" content="https://bdtirupati.com/" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#7A1F3D" />
-<link rel="icon" href="/download/icon.png" />
-<style>
-  :root {
-    --marigold: #E65100;
-    --marigold-deep: #BF360C;
-    --gold: #F9A825;
-    --gold-soft: #FFECB3;
-    --maroon: #7A1F3D;
-    --maroon-deep: #4E1327;
-    --cream: #FFFBF6;
-    --sand: #F6EDE3;
-    --ink: #3E2723;
-    --ink-soft: #6D5B52;
-    --line: #E8DCC8;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-    color: var(--ink);
-    background: var(--cream);
-    line-height: 1.6;
-  }
-  h1, h2, h3 { line-height: 1.25; margin: 0 0 12px; }
-  a { color: var(--marigold-deep); }
-  img { max-width: 100%; display: block; }
-  .wrap { width: min(1080px, 100%); margin: 0 auto; padding: 0 20px; }
 
-  /* ---------- header ---------- */
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: rgba(255, 251, 246, 0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav { display: flex; align-items: center; gap: 14px; padding: 12px 0; }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
-  .brand img { width: 44px; height: 44px; border-radius: 12px; }
-  .brand b { display: block; font-size: 17px; }
-  .brand span { display: block; font-size: 12px; color: var(--ink-soft); letter-spacing: 0.04em; }
-  .nav-links { margin-left: auto; display: flex; gap: 22px; align-items: center; }
-  .nav-links a { text-decoration: none; color: var(--ink); font-size: 15px; font-weight: 500; }
-  .nav-links a:hover { color: var(--marigold); }
-  .btn {
-    display: inline-block;
-    padding: 12px 22px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, var(--marigold) 0%, var(--marigold-deep) 100%);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(230, 81, 0, 0.24);
-  }
-  .btn:hover { filter: brightness(1.06); }
-  .btn-ghost {
-    background: transparent;
-    color: var(--maroon);
-    border: 1.5px solid var(--maroon);
-    box-shadow: none;
-  }
-  .btn-sm { padding: 9px 18px; font-size: 14px; }
+<link rel="icon" href="/assets/favicon.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 
-  /* ---------- hero ---------- */
-  .hero {
-    background:
-      radial-gradient(ellipse at 15% 0%, #FFF3DC 0%, transparent 60%),
-      linear-gradient(160deg, var(--sand) 0%, var(--cream) 55%);
-    padding: 64px 0 56px;
-    border-bottom: 1px solid var(--line);
-  }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 48px;
-    align-items: center;
-  }
-  .eyebrow {
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--maroon);
-    background: var(--gold-soft);
-    padding: 6px 14px;
-    border-radius: 999px;
-    margin-bottom: 18px;
-  }
-  .hero h1 { font-size: clamp(30px, 5vw, 46px); color: var(--maroon); }
-  .hero h1 em { font-style: normal; color: var(--marigold); }
-  .hero p.lead { font-size: 18px; color: var(--ink-soft); max-width: 30em; }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-  .hero-art {
-    position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 22px 60px rgba(122, 31, 61, 0.18);
-    border: 1px solid var(--line);
-    background: #fff;
-  }
-  .hero-art img { width: 100%; height: 100%; object-fit: cover; }
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600;700&family=Noto+Serif+Telugu:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="/assets/temple-lg.webp" />
+<link rel="stylesheet" href="/assets/site.css" />
 
-  /* ---------- sections ---------- */
-  section { padding: 60px 0; }
-  .section-head { text-align: center; max-width: 34em; margin: 0 auto 40px; }
-  .section-head h2 { font-size: clamp(24px, 3.4vw, 32px); color: var(--maroon); }
-  .section-head p { color: var(--ink-soft); margin: 0; }
-
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .card {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 26px 22px;
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Periodical",
+  "name": "Bhagavad Darshan",
+  "alternateName": "భగవద్దర్శన్",
+  "inLanguage": "te",
+  "url": "https://bdtirupati.com/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "ISKCON Tirupati",
+    "email": "iskcon.tirupati.books@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tirupati",
+      "addressRegion": "Andhra Pradesh",
+      "addressCountry": "IN"
+    }
   }
-  .card h3 { font-size: 18px; }
-  .card p { margin: 0; color: var(--ink-soft); font-size: 15px; }
-  .card .ico {
-    width: 42px; height: 42px;
-    border-radius: 12px;
-    display: grid; place-items: center;
-    background: var(--gold-soft);
-    font-size: 20px;
-    margin-bottom: 14px;
-  }
-
-  /* ---------- plans ---------- */
-  #plans { background: var(--sand); }
-  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
-  .plan {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 28px 24px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
-  .plan.featured {
-    border: 2px solid var(--gold);
-    box-shadow: 0 16px 44px rgba(249, 168, 37, 0.22);
-    position: relative;
-  }
-  .plan.featured::after {
-    content: "Best value";
-    position: absolute;
-    top: -13px; left: 50%; transform: translateX(-50%);
-    background: var(--gold);
-    color: var(--maroon-deep);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 999px;
-  }
-  .plan .term { font-size: 15px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; }
-  .plan .price { font-size: 40px; font-weight: 700; color: var(--maroon); margin: 10px 0 2px; }
-  .plan .price small { font-size: 18px; font-weight: 600; }
-  .plan .note { font-size: 14px; color: var(--ink-soft); min-height: 42px; }
-  .plan ul { list-style: none; padding: 0; margin: 16px 0 22px; text-align: left; font-size: 15px; }
-  .plan li { padding: 6px 0 6px 24px; position: relative; color: var(--ink-soft); }
-  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--marigold); font-weight: 700; }
-  .plan .btn { margin-top: auto; }
-
-  /* ---------- app strip ---------- */
-  .app-strip {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 40px;
-    align-items: center;
-    background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-deep) 100%);
-    color: #fff;
-    border-radius: 24px;
-    padding: 40px;
-  }
-  .app-strip h2 { color: #fff; }
-  .app-strip p { color: rgba(255, 255, 255, 0.82); margin: 0 0 20px; }
-  .app-strip .btn { background: var(--gold); color: var(--maroon-deep); box-shadow: none; }
-  .app-shot {
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  /* ---------- contact ---------- */
-  .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .contact .card { text-align: left; }
-  .contact a { font-weight: 600; text-decoration: none; }
-
-  /* ---------- footer ---------- */
-  footer {
-    background: var(--maroon-deep);
-    color: rgba(255, 255, 255, 0.78);
-    padding: 40px 0 28px;
-    font-size: 14px;
-  }
-  .foot-grid { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
-  footer a { color: #fff; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-  .foot-links { margin-left: auto; display: flex; flex-wrap: wrap; gap: 20px; }
-  .copy { margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.14); font-size: 13px; }
-
-  @media (max-width: 860px) {
-    .hero-grid, .app-strip { grid-template-columns: 1fr; }
-    .cards, .plans, .contact { grid-template-columns: 1fr; }
-    .nav-links a:not(.btn) { display: none; }
-    .hero { padding: 44px 0 40px; }
-    .app-strip { padding: 28px; }
-  }
-</style>
+}
+</script>
 </head>
 <body>
 
-<header>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
   <div class="wrap nav">
     <a class="brand" href="/">
-      <img src="/download/icon.png" alt="Bhagavad Darshan" />
+      <img src="/assets/logo.webp" width="46" height="46" alt="" />
       <span>
-        <b>Bhagavad Darshan</b>
-        <span>ISKCON TIRUPATI</span>
+        <span class="brand-name">Bhagavad Darshan</span>
+        <span class="brand-sub">ISKCON Tirupati</span>
       </span>
     </a>
-    <nav class="nav-links">
-      <a href="#about">About</a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
+      <span class="sr-only">Menu</span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
+      </svg>
+    </button>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="#magazine">The magazine</a>
+      <a href="#receive">What you get</a>
       <a href="#plans">Plans</a>
       <a href="#app">App</a>
       <a href="#contact">Contact</a>
@@ -249,175 +79,307 @@
   </div>
 </header>
 
-<div class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">Monthly magazine • Telugu &amp; English</span>
-      <h1>Bring <em>Bhagavad Darshan</em> home every month</h1>
-      <p class="lead">
-        The magazine of ISKCON Tirupati — the teachings of Srila Prabhupada,
-        temple news and festival calendars, delivered to your doorstep.
+<main id="main">
+
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Monthly Spiritual Magazine</span>
+      <p class="hero-telugu" lang="te">భగవద్దర్శన్</p>
+      <h1>Bhagavad Darshan</h1>
+      <p class="hero-tagline">Read · Reflect · Live Krishna Conscious Life</p>
+      <p class="hero-lead">
+        A monthly spiritual magazine in Telugu from ISKCON Tirupati — the teachings of
+        Srila Prabhupada, festival calendars and temple news, posted to your home
+        every month.
       </p>
       <div class="hero-cta">
-        <a class="btn" href="#plans">View subscription plans</a>
-        <a class="btn btn-ghost" href="#app">Get the app</a>
+        <a class="btn" href="#plans">Subscribe from ₹299</a>
+        <a class="btn btn-light" href="#magazine">Look inside the magazine</a>
       </div>
-    </div>
-    <div class="hero-art">
-      <img src="/media/magazine_august_2026.png" alt="Bhagavad Darshan magazine cover" />
-    </div>
-  </div>
-</div>
-
-<section id="about">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>What you receive</h2>
-      <p>Every issue is prepared by the devotees of ISKCON Tirupati for families across Andhra Pradesh and beyond.</p>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <div class="ico">📖</div>
-        <h3>Timeless wisdom</h3>
-        <p>Articles rooted in the Bhagavad-gita and Srimad-Bhagavatam, presented in the words of Srila Prabhupada.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🪔</div>
-        <h3>Temple &amp; festivals</h3>
-        <p>Festival dates, Ekadasi calendar and news from the temple, so your family never misses an occasion.</p>
-      </div>
-      <div class="card">
-        <div class="ico">📮</div>
-        <h3>Home delivery</h3>
-        <p>Posted to your address each month. Postage is already included in every plan — nothing extra to pay.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="plans">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Subscription plans</h2>
-      <p>Choose a term that suits you. All prices include postage and delivery anywhere in India.</p>
-    </div>
-    <div class="plans">
-      <div class="plan">
-        <div class="term">6 Months</div>
-        <div class="price"><small>₹</small>299</div>
-        <div class="note">6 monthly issues</div>
-        <ul>
-          <li>Postage included</li>
-          <li>Home delivery</li>
-          <li>Renew any time</li>
-        </ul>
-        <a class="btn btn-ghost" href="#subscribe-how">Subscribe</a>
-      </div>
-      <div class="plan">
-        <div class="term">1 Year</div>
-        <div class="price"><small>₹</small>599</div>
-        <div class="note">12 monthly issues</div>
-        <ul>
-          <li>Postage included</li>
-          <li>Home delivery</li>
-          <li>Festival calendar issues</li>
-        </ul>
-        <a class="btn btn-ghost" href="#subscribe-how">Subscribe</a>
-      </div>
-      <div class="plan featured">
-        <div class="term">2 Years</div>
-        <div class="price"><small>₹</small>1199</div>
-        <div class="note">30 issues — 24 months plus 6 months free</div>
-        <ul>
-          <li>6 extra issues free</li>
-          <li>Postage included</li>
-          <li>Lowest cost per issue</li>
-        </ul>
-        <a class="btn" href="#subscribe-how">Subscribe</a>
-      </div>
-    </div>
-
-    <div class="section-head" id="subscribe-how" style="margin-top:52px;">
-      <h2>How to subscribe</h2>
-      <p>
-        Subscribe or renew through the Bhagavad Darshan app, or contact the temple
-        book department and our team will register you.
+      <p class="hero-meta">
+        <span>Volume 22</span>
+        <span>Monthly in Telugu</span>
+        <span>Postage included</span>
+        <span>Delivered across India</span>
       </p>
-      <div class="hero-cta" style="justify-content:center;">
-        <a class="btn" href="https://wa.me/919550948778?text=I%20would%20like%20to%20subscribe%20to%20Bhagavad%20Darshan%20magazine">Enquire on WhatsApp</a>
-        <a class="btn btn-ghost" href="mailto:iskcon.tirupati.books@gmail.com">Email the temple</a>
-      </div>
     </div>
   </div>
-</section>
 
-<section id="app">
-  <div class="wrap">
-    <div class="app-strip">
-      <div class="app-shot">
-        <img src="/media/login_top_section.png" alt="Bhagavad Darshan app" />
+  <section id="magazine">
+    <div class="wrap spotlight">
+      <div class="spotlight-art">
+        <img src="/assets/cover-700.webp" width="700" height="933"
+             alt="Cover of Bhagavad Darshan, Volume 22 Issue 7, featuring the Jagannath Rathayatra festival" />
       </div>
       <div>
-        <h2>Manage everything in the app</h2>
+        <span class="eyebrow">On the cover</span>
+        <h2>Jagannath Rathayatra Mahotsavam</h2>
+        <ul class="issue-tags">
+          <li>Volume 22 · Issue 7</li>
+          <li>Telugu</li>
+          <li>₹40 an issue</li>
+        </ul>
         <p>
-          Register with your phone number, pay securely by UPI, keep your delivery
-          address up to date and see exactly when your subscription expires.
+          Each issue carries the festival that shapes the month at the temple, alongside
+          articles that bring the Bhagavad-gita and Srimad-Bhagavatam into daily family life.
         </p>
-        <div class="hero-cta">
-          <a class="btn" href="/download/">Download the app</a>
+        <ul class="inside">
+          <li><b>Festival feature</b> — the story and significance behind the month's celebration</li>
+          <li><b>From Srila Prabhupada</b> — lectures and letters of the Founder Acharya of ISKCON</li>
+          <li><b>Scripture study</b> — verses from the Gita and Bhagavatam explained simply</li>
+          <li><b>Temple diary</b> — news, upcoming festivals and the Ekadasi calendar</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="receive" class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <svg class="lotus" viewBox="0 0 62 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <path d="M0 6h20M42 6h20" stroke-linecap="round" />
+          <path d="M31 1.5c2.6 2 3.9 3.5 3.9 4.5S33.6 10 31 10.5C28.4 10 27.1 7 27.1 6s1.3-2.5 3.9-4.5Z" />
+        </svg>
+        <h2>What a subscription brings</h2>
+        <p>Prepared by the devotees of ISKCON Tirupati for families across Andhra Pradesh and beyond.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M4 4.5h6a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4Z" stroke-linejoin="round" />
+              <path d="M20 4.5h-6a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6Z" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Timeless wisdom</h3>
+          <p>Articles rooted in the Bhagavad-gita and Srimad-Bhagavatam, presented as Srila Prabhupada taught them.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M12 3c1.8 2.6 2.7 4.4 2.7 5.6 0 1.8-1.2 3-2.7 3.5-1.5-.5-2.7-1.7-2.7-3.5C9.3 7.4 10.2 5.6 12 3Z" stroke-linejoin="round" />
+              <path d="M6 13.5c2 1.6 4 2.4 6 2.4s4-.8 6-2.4M5 18c2.4 1.7 4.7 2.5 7 2.5s4.6-.8 7-2.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Festivals never missed</h3>
+          <p>Festival dates, the Ekadasi calendar and temple news, so your family can plan the month around them.</p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="5.5" width="18" height="13" rx="2" />
+              <path d="m3.8 6.6 8.2 6 8.2-6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Posted to your door</h3>
+          <p>Every issue reaches you by post each month. Postage is included in every plan — there is nothing extra to pay.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Contact us</h2>
-      <p>Our book department team is happy to help with new subscriptions, renewals and address changes.</p>
-    </div>
-    <div class="contact">
-      <div class="card">
-        <div class="ico">💬</div>
-        <h3>WhatsApp</h3>
-        <p><a href="https://wa.me/919550948778">+91 95509 48778</a></p>
+  <section id="plans">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Subscriptions</span>
+        <h2>Choose your term</h2>
+        <p>All plans include postage and delivery anywhere in India.</p>
       </div>
-      <div class="card">
-        <div class="ico">✉️</div>
-        <h3>Email</h3>
-        <p><a href="mailto:iskcon.tirupati.books@gmail.com">iskcon.tirupati.books@gmail.com</a></p>
-      </div>
-      <div class="card">
-        <div class="ico">🛕</div>
-        <h3>Temple</h3>
-        <p>ISKCON Tirupati<br />Tirupati, Andhra Pradesh</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<footer>
+      <div class="plans">
+        <div class="plan">
+          <p class="term">6 Months</p>
+          <p class="price"><small>₹</small>299</p>
+          <p class="issues">6 monthly issues</p>
+          <ul>
+            <li>Postage included</li>
+            <li>Home delivery</li>
+            <li>Renew any time</li>
+          </ul>
+          <a class="btn btn-outline" href="#subscribe">Subscribe</a>
+        </div>
+
+        <div class="plan">
+          <p class="term">1 Year</p>
+          <p class="price"><small>₹</small>599</p>
+          <p class="issues">12 monthly issues</p>
+          <ul>
+            <li>Postage included</li>
+            <li>Home delivery</li>
+            <li>Every festival issue of the year</li>
+          </ul>
+          <a class="btn btn-outline" href="#subscribe">Subscribe</a>
+        </div>
+
+        <div class="plan featured">
+          <span class="plan-flag">Best value</span>
+          <p class="term">2 Years</p>
+          <p class="price"><small>₹</small>1199</p>
+          <p class="issues">30 monthly issues — two years plus six extra months</p>
+          <ul>
+            <li>6 extra issues</li>
+            <li>Works out to about ₹40 an issue</li>
+            <li>Postage included</li>
+          </ul>
+          <a class="btn" href="#subscribe">Subscribe</a>
+        </div>
+      </div>
+
+      <p class="plans-note">
+        Already a subscriber? Renewals use the same plans — our team will carry your
+        delivery address forward.
+      </p>
+
+      <div class="section-head" id="subscribe" style="margin-top: 68px;">
+        <h2>How to subscribe</h2>
+        <p>
+          Subscribe or renew in the Bhagavad Darshan app, or send us a message and the
+          temple book department will register you.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="https://wa.me/919550948778?text=I%20would%20like%20to%20subscribe%20to%20Bhagavad%20Darshan%20magazine">
+            Message us on WhatsApp
+          </a>
+          <a class="btn btn-outline" href="mailto:iskcon.tirupati.books@gmail.com?subject=Bhagavad%20Darshan%20subscription">
+            Email the temple
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="quote-block">
+        <img src="/assets/prabhupada-560.webp" width="560" height="730"
+             alt="His Divine Grace A. C. Bhaktivedanta Swami Srila Prabhupada" />
+        <div>
+          <blockquote>
+            “Books are the basis. Preaching is the essence. Utility is the principle.
+            Purity is the force.”
+          </blockquote>
+          <cite>His Divine Grace A. C. Bhaktivedanta Swami Srila Prabhupada — Founder Acharya, ISKCON</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="app">
+    <div class="wrap app-grid">
+      <div>
+        <span class="eyebrow">Mobile app</span>
+        <h2>Manage your subscription in the app</h2>
+        <ul class="app-list">
+          <li>Register and sign in with your phone number</li>
+          <li>Pay securely by UPI</li>
+          <li>Keep your delivery address up to date</li>
+          <li>See exactly when your subscription expires</li>
+        </ul>
+        <div class="hero-cta">
+          <a class="btn" href="/download/">Get the app</a>
+        </div>
+      </div>
+      <img src="/assets/app-banner-1000.webp" width="1000" height="667"
+           alt="The Bhagavad Darshan app, showing ISKCON Tirupati temple and Srila Prabhupada" />
+    </div>
+  </section>
+
+  <section id="contact" class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Contact the book department</h2>
+        <p>We are glad to help with new subscriptions, renewals and address changes.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M20.5 12a8.5 8.5 0 1 1-3.9-7.1M20.5 12a8.5 8.5 0 0 1-12.4 7.6L4 20.5l1.1-3.9" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>WhatsApp</h3>
+          <p><a href="https://wa.me/919550948778">+91 95509 48778</a></p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="5.5" width="18" height="13" rx="2" />
+              <path d="m3.8 6.6 8.2 6 8.2-6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Email</h3>
+          <p><a href="mailto:iskcon.tirupati.books@gmail.com">iskcon.tirupati.books@gmail.com</a></p>
+        </div>
+        <div class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M4 20.5h16M6 20.5V10l6-4.5 6 4.5v10.5M10 20.5v-5h4v5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Temple</h3>
+          <p>ISKCON Tirupati<br />Tirupati, Andhra Pradesh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <strong style="color:#fff;font-size:16px;">Bhagavad Darshan</strong><br />
-        Magazine of ISKCON Tirupati
+        <div class="foot-brand">
+          <img src="/assets/logo.webp" width="44" height="44" alt="" />
+          <strong>Bhagavad Darshan</strong>
+        </div>
+        <p>
+          The monthly spiritual magazine of ISKCON Tirupati, published in Telugu
+          and delivered to homes across India.
+        </p>
       </div>
-      <div class="foot-links">
-        <a href="#plans">Plans</a>
-        <a href="/download/">App</a>
-        <a href="/privacy">Privacy policy</a>
-        <a href="/media/legal/delete-account.html">Delete account</a>
-        <a href="#contact">Contact</a>
+      <div>
+        <h4>Magazine</h4>
+        <ul>
+          <li><a href="#magazine">Inside the magazine</a></li>
+          <li><a href="#plans">Subscription plans</a></li>
+          <li><a href="#subscribe">How to subscribe</a></li>
+          <li><a href="/download/">Mobile app</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#contact">Contact us</a></li>
+          <li><a href="/privacy">Privacy policy</a></li>
+          <li><a href="/legal/delete-account.html">Delete account</a></li>
+          <li><a href="https://wa.me/919550948778">WhatsApp support</a></li>
+        </ul>
       </div>
     </div>
-    <div class="copy">© <span id="yr">2026</span> ISKCON Tirupati. All rights reserved.</div>
+    <div class="copy">
+      <span>© <span id="yr">2026</span> ISKCON Tirupati. All rights reserved.</span>
+      <span>Hare Krishna</span>
+    </div>
   </div>
 </footer>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 </script>
 </body>
 </html>
